@@ -21,12 +21,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'ibudx3r_+o3v52j$&+=ir1*1#q$%@4k2n@w3cuu92p+s(-&fu!'
+SECRET_KEY = ''
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['3.128.103.122']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -82,11 +82,11 @@ WSGI_APPLICATION = 'Project.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'djangostack',
+        'NAME': 'db_name',
         'HOST': '/opt/bitnami/postgresql',
         'PORT': '5432',
-        'USER': 'bitnami',
-        'PASSWORD': '2425de1e84'
+        'USER': 'db_user',
+        'PASSWORD': 'db_password'
     }
 }
 

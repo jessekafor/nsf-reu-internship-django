@@ -15,7 +15,7 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import scoped_session, sessionmaker
 
 #creation of engine
-engine = create_engine('postgresql+psycopg2://bitnami:2425de1e84@3.128.103.122/djangostack')
+engine = create_engine('postgresql+psycopg2://db_user:db_password@host/dd_name')
 
 """
 from sqlalchemy import inspect
@@ -32,7 +32,7 @@ for table_name in inspector.get_table_names():
 db = scoped_session(sessionmaker(bind=engine))
 
 import glob
-filenames = sorted(glob.glob('/Users/CASLoaner/Downloads/pmc-00/3*/*.nxml', recursive=True))
+filenames = sorted(glob.glob('/Users/CASLoaner/Downloads/pmc-00/**/*.nxml', recursive=True))
 
 
 import bs4

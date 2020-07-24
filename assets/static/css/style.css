@@ -1,0 +1,146 @@
+.paging {
+	text-align: right;
+	clear: both;
+	width: 100%;
+}
+
+@media all and (max-width: 768px) {
+	.paging {
+		text-align: left;
+	}
+}
+kwd:last-child::after {
+	content: " "
+}
+ref-list person-group name::after, ref-list article-title {
+	font-style: italic
+}
+kwd::after, ref-list given-names::after, ref-list volume::after, 
+ref-list fpage::after, ref-list lpage::after {
+	content: ", "
+}
+ref-list person-group name:last-child::after, ref-list year::after, 
+ref-list article title::after {
+	content: ".";
+	letter-spacing: 5px
+}
+ref-list given-names:last-child::after {
+	content: " "
+}
+.pub-dates-pubb {
+	padding-bottom: 15px
+}
+.card div.list-group.list-group-flush {
+	border-top: 1px solid #dfdfdf;
+	padding-top: 15px
+}
+history date[date-type="rev-request"]::before {
+	display: block;
+	padding-top: 15px;
+	border-top: 1px solid #dfdfdf;
+	content: "Rev Request";
+	color: #6c757d;
+	font-size: .8rem
+}
+history date[date-type="accepted"]::before {
+	display: block;
+	padding-top: 15px;
+	border-top: 1px solid #dfdfdf;
+	content: "Accepted";
+	color: #6c757d;
+	font-size: .8rem
+}
+history date[date-type="rev-recd"]::before {
+	display: block;
+	padding-top: 15px;
+	border-top: 1px solid #dfdfdf;
+	content: "Rev Recd";
+	color: #6c757d;
+	font-size: .8rem
+}
+history date[date-type="received"]::before {
+	display: block;
+	padding-top: 15px;
+	content: "Received";
+	font-size: .8rem;
+	color: #6c757d
+}
+history date {
+	display: block;
+	padding-bottom: 15px
+}
+history date month::before, history date month::after, pub-date day::after, 
+pub-date month::after {
+	content: "/"
+}
+mixed-citation::before,
+citation::before {
+	content: "→"
+}
+contrib xref, aff label {
+	font-weight: bold
+}
+contrib xref::before, aff label::before {
+	content: "(";
+	letter-spacing: -3px
+}
+contrib xref::after, aff label::after {
+	content: ")";
+	letter-spacing: -3px
+}
+aff, ref, contrib {
+	display: block;
+	margin-bottom: 15px
+}
+.wrapper {
+	margin: 25px auto 60px;
+	max-width: 2000px
+}
+.search-results {
+	background: #f5f5f5;
+	padding: 3%;
+	border: 1px solid #eee
+}
+.article-item button a {
+	color: #fff!important
+}
+.article-item {
+	border-top: 1px solid #ddd;
+	padding: 20px 0
+}
+ul#id_models {
+	list-style: none
+}
+input#id_q {
+	border: 1px solid #ddd;
+	border-radius: 20px;
+	text-indent: 10px;
+	padding: 5px 20px;
+	min-width: 300px
+}
+.table-search {
+	margin: 50px auto;
+	max-width: 500px;
+	border: 1px solid #eee
+}
+.admin-btn {
+	text-align: right;
+	clear: both;
+	float: right
+}
+.card {
+	margin-bottom: 60px
+}
+.h7 {
+	font-size: .8rem
+}
+
+@media (min-width:992px) {
+	.gedf-main {
+		padding-left: 4rem;
+		padding-right: 4rem
+	}
+	.gedf-card {
+		margin-bottom: 2.77rem
+	}
+}

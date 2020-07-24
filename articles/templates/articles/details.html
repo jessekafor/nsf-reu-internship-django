@@ -1,0 +1,203 @@
+{% extends 'articles/wrapper.html' %} {% block content %} <nav class="navbar navbar-light bg-white">
+        <button onclick="goBack()" class="btn btn-default"><strong>Go Back</strong></button>
+	<script> function goBack() { window.history.back(); } </script>
+    </nav>
+    <div class="container-fluid gedf-wrapper">
+        <div class="row">
+            <div class="col-md-3 sidebar">
+		<div class="theiaStickySidebar">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="h5">Journal</div>
+			<div class="h7">{{article.journal_title | safe }}</div>
+                        <div class="h7 text-muted">ID: {{article.journal_id}}</div>
+                        <div class="h7 text-muted">ISSN PPUB: {{article.issn_ppub}}</div>
+			<div class="h7 text-muted">ISSN EPUB: {{article.issn_epub}}</div>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <div class="h5">Publisher</div>
+			    <div class="h7">{{article.publisher_name | safe }}</div>
+                            <div class="h7 text-muted">Loc: {{article.publisher_loc}}</div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <div class="h5">Pub Dates</div>
+                        <div class="h7 text-muted"><em class="fa fa-calendar"></em> PPub Date</div>
+			<div class="pub-dates-pubb"> {{article.pub_date_ppub | safe }} </div>                        
+                    <div class="list-group list-group-flush">
+                        <div class="h7 text-muted"><em class="fa fa-calendar"></em> EPub Date</div>
+                        <div class="pub-dates-epub"> {{article.pub_date_epub | safe }} </div>
+       		    </div>
+		    </div>
+                </div>
+                <div class="card">
+                  <div class="card-body">
+                        <div class="h5">History Dates</div>
+                        <div class="article-history"> {{article.history | safe }} </div>
+		  </div>
+	         </div>
+	    </div>
+	    </div>
+            <div class="col-md-6 main">
+                <!--- \\\\\\\Post-->
+                <div class="card gedf-card">
+                    <div class="card-header">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="ml-2">
+                                    <div class="h5 m-0">Abstract</div>
+                                    <div class="h7 text-muted">Article Category: 
+{{article.article_subject | safe }}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="text-muted h7 mb-2"> <i class="fa fa-clock-o"></i> 
+{{article.created_at}}</div>
+                        <a class="card-link" href="#">
+                            <h5 class="card-title">{{article.article_title | safe }}</h5>
+                        </a>
+                        <p class="card-text">
+                            {{article.abstract | safe }}
+                        </p>
+                    </div>
+                </div>
+                <!-- Post /////-->
+                <div class="card gedf-card">
+                    <div class="card-header">
+                        <div class="h5">Sections</div>
+                        <ul class="nav nav-tabs card-header-tabs" id="myTab" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" id="standard-tab" data-toggle="tab" href="#standard" 
+role="tab" aria-controls="standard" aria-selected="true">Standard</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="methods-tab" data-toggle="tab" role="tab" 
+aria-controls="methods" aria-selected="false" href="#methods">Methods</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="display-objects-tab" data-toggle="tab" role="tab" 
+aria-controls="display-objects" aria-selected="false" href="#display-objects">Display Objects</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="card-body">
+                        <div class="tab-content" id="myTabContent">
+                            <div class="tab-pane fade show active" id="standard" role="tabpanel" 
+aria-labelledby="standard-tab">
+                                <div class="form-group">
+                                    <div class="h5">Content</div>
+                                    <p>{{article.body | safe }}</p>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="methods" role="tabpanel" 
+aria-labelledby="methods-tab">
+                                <div class="form-group">
+                                    <div class="h5">Methods</div>
+                                    <p>{{article.sec_methods | safe }}</p>
+                                </div>
+                                <div class="py-4"></div>
+                            </div>
+                            <div class="tab-pane fade" id="display-objects" role="tabpanel" 
+aria-labelledby="display-objects-tab">
+                                <div class="form-group">
+                                    <div class="h5">Display Objects</div>
+                                    <p>{{article.sec_display_objects | safe }}</p>
+                                </div>
+                                <div class="py-4"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Post /////-->
+                
+                <div class="card gedf-card">
+                    <div class="card-header">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="ml-2">
+                                    <div class="h5 m-0">Reference List</div>
+                                    <div class="h7 text-muted">Citations</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                              <div class="reference-list">{{article.ref_list | safe }}</div>                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 sidebar">
+    	    <div class="theiaStickySidebar">
+            <div class="card">
+                    <div class="card-body">
+                        <div class="h5">Article</div>
+                        <div class="h7">{{article.article_title | safe }}</div><br>
+                        <div class="h7 text-muted">PMID: {{article.article_id_pmid}}</div>
+                        <div class="h7 text-muted">PMC: {{article.article_id_pmc}}</div>
+                        <div class="h7 text-muted">Publisher ID: {{article.article_id_publisher_id}}</div>
+                        <div class="h7 text-muted">Publisher DOI: {{article.article_id_doi}}</div>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            Volume
+                            <span class="badge badge-pill badge-primary pull-right">{{article.volume}}</span>
+                        </li>
+                        <li class="list-group-item">
+                            Issue
+                            <span class="badge badge-pill badge-primary pull-right">{{article.issue}}</span>
+                        </li>
+                        <li class="list-group-item">
+                            Fpage
+                            <span class="badge badge-pill badge-primary pull-right">{{article.fpage}}</span>
+                        </li>
+                        <li class="list-group-item">
+                            Lpage
+                            <span class="badge badge-pill badge-primary pull-right">{{article.lpage}}</span>
+                        </li>
+		   </ul>
+		  </div>
+		 <div class="card gedf-card">
+			<div class="card-body">
+                            <h5 class="card-title">Contributors</h5>
+                            <div class="card-text">{{article.contrib_group | safe }}</div>
+			</div>
+                </div>
+                <div class="card gedf-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Affiliates</h5>
+                        <div class="card-text">{{article.aff1 | safe }}</div>
+			<div class="card-text">{{article.aff2 | safe }}</div>
+			<div class="card-text">{{article.aff3 | safe }}</div>
+                    </div>
+                </div>
+                <div class="card gedf-card">
+                        <div class="card-body">
+                            <h5 class="card-title">Keywords</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">keyword group</h6>
+                            <div class="card-text">{{article.keywords | safe }}</div>
+                            <a href="/search" class="card-link">Go back to Search</a>
+                        </div>
+                    </div>
+                <p>{{article.copyright_statement | safe }}</p>
+            </div>
+        </div>
+	</div>
+    </div>
+ <script type="text/javascript">
+  jQuery(document).ready(function() {
+    jQuery('.sidebar').theiaStickySidebar({
+      // Settings
+      additionalMarginTop: 30
+    });
+  });
+</script>
+{% endblock %}
